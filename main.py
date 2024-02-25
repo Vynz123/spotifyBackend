@@ -59,19 +59,6 @@ def index():
     return render_template("index.html")
 
 
-
-@app.route('/album/<album_name>')
-def album(album_name):
-    # Your code to fetch album details based on album_name from the backend
-    # Example data for demonstration, replace this with actual data retrieval
-    album_data = {
-        'name': album_name,
-        'description': 'Your album description here.',
-        'songs': ['Song 1', 'Song 2', 'Song 3']  # Add actual song data
-    }
-    return render_template('album.html', album_data=album_data)
-
-
 @app.route('/table/')  # connects /stub/ URL to stub() function
 def table():
     return render_template("table.html")
