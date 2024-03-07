@@ -120,6 +120,8 @@ def initUsers():
         users_data = [
     {'name': 'Thomas Edison', 'uid': 'toby', 'email': 'thomas@example.com', 'password': '123toby'},
     ]
+        
+        
 
         # iterate
         for user_data in users_data:

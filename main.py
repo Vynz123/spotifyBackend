@@ -14,7 +14,7 @@ from __init__ import app, db, cors  # Definitions initialization
 # setup APIs
 from api.user import user_api # Blueprint import api definition
 from api.player import player_api
-from api.songs import Song_api
+from api.song import Song_api
 # database migrations
 from model.users import initUsers
 from model.players import initPlayers
@@ -59,19 +59,6 @@ def index():
     return render_template("index.html")
 
 
-
-@app.route('/album/<album_name>')
-def album(album_name):
-    # Your code to fetch album details based on album_name from the backend
-    # Example data for demonstration, replace this with actual data retrieval
-    album_data = {
-        'name': album_name,
-        'description': 'Your album description here.',
-        'songs': ['Song 1', 'Song 2', 'Song 3']  # Add actual song data
-    }
-    return render_template('album.html', album_data=album_data)
-
-
 @app.route('/table/')  # connects /stub/ URL to stub() function
 def table():
     return render_template("table.html")
@@ -94,6 +81,7 @@ custom_cli = AppGroup('custom', help='Custom commands')
 def generate_data():
     initUsers()
     initPlayers()
+    initSongs()
 
 
 # Register the custom command group with the Flask application
