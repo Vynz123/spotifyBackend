@@ -44,7 +44,7 @@ cors = CORS(app, resources={r"/api/*": {
 @app.before_request
 def before_request():
     allowed_origin = request.headers.get('Origin')
-    if allowed_origin in ['http://localhost:4100', 'http://127.0.0.1:4100', 'https://nighthawkcoders.github.io']:
+    if allowed_origin in ['http://localhost:4100', 'http://127.0.0.1:4100', 'https://nighthawkcoders.github.io', 'https://spotifybackend.stu.nighthawkcodingsociety.com/api/song/']:
         cors.add_allowed_origin(allowed_origin)
     initSongs()
 
